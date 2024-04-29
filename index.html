@@ -5,80 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>"Roshambo"</title>
+    <script src="roshambo.js"></script>
   </head>
   <body>
-	<script>
+	
            
-            // get computerChoice 1 of 3
             
-   function getComputerChoice() {
-
-     function getRandomThree(max) {
-    return Math.floor(Math.random() * max);
-};
- let randomThree = getRandomThree(3);
-
-    if (randomThree === 0 ) {
-        return "rock"
-    }
-    else if (randomThree === 1 ){
-        return "scissors"
-    }
-    else {
-        return "paper"
-    }
-   };
-  console.log(getComputerChoice());
-
- // get humanChoice 
- //const humanSelection = prompt("Paper, rock or scissors?")
 
 
- //declare score variables 
- let humanScore = 0;
- let computerScore = 0; 
-
- //fn play round\
- const computerSelection = getComputerChoice()
- function playRound(humanSelection, computerSelection) {
-    if((humanSelection === "rock") && computerSelection === "scissors") {
-        console.log("you win");
-        humanScore = humanScore + 1;
-    }
-    else if((humanSelection === "rock") && computerSelection === "paper"){
-console.log("you lose") ; 
-computerScore = computerScore + 1;
-    }
-    else if(humanSelection === 'rock' && computerSelection === "rock") {
-        console.log("it's a draw");
-    }
-else if(humanSelection === "scissors" && computerSelection === "rock" ){
-    console.log("you win");
-        humanScore = humanScore + 1;
-}
-else if(humanSelection === "scissors" && computerSelection === "scissors") {
-    console.log("it's a draw");
-}
-else if(humanSelection === "scissors" && computerSelection === "paper") {
-    console.log("you win");
-        humanScore = humanScore + 1;
-}
-else if(humanSelection === "paper" && computerSelection === "scissors") {
-    console.log("you lose") ; 
-computerScore = computerScore + 1;
-}
-else if (humanSelection === "paper" && computerSelection === "rock") {
-    console.log("you win");
-        humanScore = humanScore + 1;
-}
-else if(humanSelection === "paper" && computerSelection === "paper") {
-    console.log("its a draw") ; 
- }
-};
-
- playRound(humanSelection, computerSelection)
 
 
-    </script>
+
+
   </body>
 </html>
