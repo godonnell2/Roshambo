@@ -14,7 +14,12 @@ function getComputerChoice() {
 }
 console.log(getComputerChoice());
 
-let paragraph = document.querySelector("h1");
+let paragraph = document.querySelector("#log");
+const line = (txt) => {
+  const p = document.createElement("p");
+  p.innerText = txt;
+  paragraph.append(p);
+};
 
 // get humanChoice and play Round
 let humanSelection = "";
@@ -33,8 +38,7 @@ let computerScore = 0;
 
 function playGame() {
   if (humanScore >= 5 || computerScore >= 5) {
-    paragraph.append(`game over humanScore ${humanScore}`);
-    paragraph.append(`computer ${computerScore}`);
+    line(`GAME OVER humanScore ${humanScore} computer ${computerScore} `);
   }
 }
 
@@ -42,19 +46,19 @@ function playGame() {
 
 function playRound(humanSelection, computerSelection) {
   if (humanSelection === "rock" && computerSelection === "scissors") {
-    paragraph.append("Rock beats scissors");
+    line("Rock beats scissors");
     humanScore = humanScore + 1;
     return humanScore;
     playGame();
   } else if (humanSelection === "rock" && computerSelection === "paper") {
-    paragraph.append("Rock loses to paper");
+    line("Rock loses to paper");
     computerScore = computerScore + 1;
     return computerScore;
     playGame();
   } else if (humanSelection === "rock" && computerSelection === "rock") {
-    paragraph.append("rock meets rock");
+    line("rock meets rock");
   } else if (humanSelection === "scissors" && computerSelection === "rock") {
-    paragraph.append("Scissors beats rock");
+    line("Scissors beats rock");
     humanScore = humanScore + 1;
     playGame();
     return humanScore;
@@ -62,24 +66,24 @@ function playRound(humanSelection, computerSelection) {
     humanSelection === "scissors" &&
     computerSelection === "scissors"
   ) {
-    paragraph.append("scissor sisters");
+    line("scissor sisters");
   } else if (humanSelection === "scissors" && computerSelection === "paper") {
-    paragraph.append("Scissors beats paper");
+    line("Scissors beats paper");
     humanScore = humanScore + 1;
     return humanScore;
     playGame();
   } else if (humanSelection === "paper" && computerSelection === "scissors") {
-    paragraph.append("Paper beats scissors");
+    line("Paper beats scissors");
     computerScore = computerScore + 1;
     return computerScore;
     playGame();
   } else if (humanSelection === "paper" && computerSelection === "rock") {
-    paragraph.append("Paper loses to rock");
+    line("Paper loses to rock");
     humanScore = humanScore + 1;
     playGame();
     return humanScore;
   } else if (humanSelection === "paper" && computerSelection === "paper") {
-    paragraph.append("paper meets paper its a book");
+    line("paper meets paper its a book");
   }
 }
 
